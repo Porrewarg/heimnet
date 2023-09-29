@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ingredienser</title>
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a href="#">Hem</a></li>
+      <li><a href="#">Blogg</a></li>
+      <li><a href="#">Logga in</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="form-container">
+      <label for="shopping-list">Lägg till din inköpslista nedan</label>
+      <input type="text" name="patty" id="patty">
+        
+      <div id="additional-form-container">
+        <!-- Additional form elements will be dynamically added here -->
+      </div>
+  
+      <div class="flex-container">
+        <!-- Content for the left and right child containers -->
+      </div>
+  
+      <div class="flex-container">
+        <!-- Content for the contact form and list -->
+      </div>
+      <button type="button" onclick="addMoreItems()">Lägg till fler varor</button>
+              <section class="submission">
+          <input type="submit" value="Submit">
+    </div>
+
+
+
+  
+      <script>
+        function addMoreItems() {
+          var additionalFormContainer = document.getElementById("additional-form-container");
+  
+          var newForm = document.createElement("div");
+          newForm.classList.add("form-container");
+  
+          var label = document.createElement("label");
+          label.textContent = "";
+          newForm.appendChild(label);
+  
+          var input = document.createElement("input");
+          input.type = "text";
+          input.name = "additional-item";
+          input.required = true;
+          newForm.appendChild(input);
+  
+          additionalFormContainer.appendChild(newForm);
+        }
+      </script>
+    </body>
+  </html>

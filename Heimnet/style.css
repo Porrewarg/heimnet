@@ -1,0 +1,251 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  /*Image only BG fallback*/
+
+  /*background = gradient + image pattern combo*/
+  background-color: #005F94;
+}
+
+body {
+  font-family: montserrat, arial, verdana;
+  /* CSS styles for navbar */
+}
+
+/* CSS styles for navbar */
+.navbar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f0f0;
+  padding: 10px;
+  align-items: center;
+}
+
+.navbar-buttons button {
+  margin-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Form styles */
+#form-section {
+  display: flex;
+}
+
+#msform {
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#msform fieldset {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: auto;
+  width: 610px;
+  position: relative;
+}
+
+#msform fieldset legend {
+  text-align: left;
+  font-size: large;
+  
+}
+
+#search-bar input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+
+/* Style for the container of the checkbox and label */
+.hcl-checkbox__label {
+  display: inline-block;
+  background-color: #FFFFFF;
+  /* Default background color */
+  color: #007e47;
+  /* Default text color */
+  border: 2px solid #005F94;
+  /* Default border color */
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 11px;
+  margin-top: 10px;
+}
+
+#checkboxgroup-item_types {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Hide the actual checkbox input */
+.hcl-checkbox-button input[type="checkbox"] {
+  display: none;
+}
+
+/* Style for the label text */
+.hcl-checkbox-button label {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Style for when the checkbox is not checked */
+.hcl-checkbox-button input[type="checkbox"]:not(:checked)+label {
+  background-color: #FFFFFF
+    /* your background color when unchecked */
+  ;
+  color: #333
+    /* your text color when unchecked */
+  ;
+}
+
+/* Style for when the checkbox is not checked, including the input element */
+.hcl-checkbox-button input[type="checkbox"]:not(:checked)+label,
+.hcl-checkbox-button input[type="checkbox"]:not(:checked) {
+  background-color: #005F94
+    /* your background color when unchecked */
+  ;
+  color: #FFFFFF
+    /* your text color when unchecked */
+  ;
+}
+
+#specified-filter{
+  display: flex;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#specified-filter .curtain-selector{
+  display: flex;
+justify-content: center;
+}
+
+.curtain-selector .hcl-select__list{
+  width: auto;
+  padding-right: 50px;
+  height: 35px;
+  border: 2px solid #005F94;
+  border-radius: 5px;
+}
+
+
+/* Search buttons */
+#container-buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #005F94;
+}
+
+#container-buttons .find-button {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: auto;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #FFFFFF;
+  font-size: 13px;
+  background-color: #005F94;
+}
+
+/* Info section styles */
+#guide-section {
+  display: flex;
+  justify-content: center;
+}
+
+.info-section {
+  width: 100%;
+  height: 300px;
+  background-color: #FFFFFF;
+  color: #ccc;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.info-section #info-text {
+  width: 50%;
+}
+
+.info-section h3 {
+  text-align: center;
+}
+
+.info-section p {
+  text-align: center;
+}
+
+/*Contact info*/
+
+#contact-section{
+  background-color: #005F94;
+  color: #FFFFFF;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info{
+  width: 50%;
+  height: auto;
+  text-align: center;
+}
+
+.social-media-info{
+  width: 50%;
+  height: auto;
+  text-align: center;
+}
+
+
+/* Footer styles */
+#footer {
+  background-color: #333;
+  height: auto;
+  width: 100%;
+}
