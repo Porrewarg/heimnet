@@ -1,6 +1,6 @@
 // // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js'
+import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,13 +18,44 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const querySnapshot = await getDocs(collection(db, "properties"));
+// Create a reference to the properties collection
+const propertiesRef = collection(db, "properties");
+
+// Get all properties from firebase and log them to the console
+const querySnapshot = await getDocs(propertiesRef);
 querySnapshot.forEach((doc) => {
     console.log(doc.data());
 });
 
 
+// Add event listener to search button
+document.getElementById("search-button").addEventListener("click", searchProperties);
 
+// Query filtered properties from the firestore database
+function searchProperties(event) {
+    // Prevent default behaviour
+    event.preventDefault();
+
+    // Collect all data from the form
+    const searchBar = document.getElementById("autocomplete-input");
+    // Checkboxes
+    const allCategories = document.getElementById("checkbox-item_types-all");
+    const detachedHouse = document.getElementById("checkbox-item_types-eneboliger");
+    const semiDetachedHouse = document.getElementById("checkbox-item_types-tomannsboliger");
+    const apartment = document.getElementById("checkbox-item_types-leiligheter");
+    const leisureHome = document.getElementById("checkbox-item_types-fritidsboliger");
+    const empty = document.getElementById("checkbox-item_types-tomt");
+    const farm = document.getElementById("checkbox-item_types-gard");
+    const other = document.getElementById("checkbox-item_types-annet");
+    // Dropdowns
+    const rooms = document.getElementById("select-rooms_min");
+    const size = document.getElementById("select-living_area_min");
+    const price = document.getElementById("select-price_max");
+
+    //TODO
+}
+
+/*
 // Replace 'YOUR_API_KEY' with your Google Maps API Key
 const apiKey = 'YOUR_API_KEY';
 
@@ -68,5 +99,4 @@ function loadGoogleMapsScript() {
 // Load Google Maps when the page loads
 window.onload = loadGoogleMapsScript;
 
-
-
+*/
