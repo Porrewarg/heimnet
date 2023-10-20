@@ -22,17 +22,18 @@ const db = getFirestore(app);
 const propertiesRef = collection(db, "properties");
 
 // Get all properties from firebase and log them to the console
+/*
 const querySnapshot = await getDocs(propertiesRef);
 querySnapshot.forEach((doc) => {
     console.log(doc.data());
 });
-
+*/
 
 // Add event listener to search button
 document.getElementById("search-button").addEventListener("click", searchProperties);
 
 // Query filtered properties from the firestore database
-function searchProperties(event) {
+async function searchProperties(event) {
     // Prevent default behaviour
     event.preventDefault();
 
@@ -52,7 +53,52 @@ function searchProperties(event) {
     const size = document.getElementById("select-living_area_min");
     const price = document.getElementById("select-price_max");
 
-    //TODO
+    // Create array to store alle where methods for the querie
+    const whereMethods = [];
+
+    // If the checkbox for all propertie categories is unchecked,
+    // check which categories are checked
+    if (!allCategories.checked) {
+        // Create array to store all checked categories
+        const categoriesArray = [];
+
+        // Push all checked categories to the array
+        if (detachedHouse.checked) categoriesArray.push(detachedHouse.value);
+        if (semiDetachedHouse.checked) categoriesArray.push(semiDetachedHouse.value);
+        if (apartment.checked) categoriesArray.push(apartment.value);
+        if (leisureHome.checked) categoriesArray.push(leisureHome.value);
+        if (empty.checked) categoriesArray.push(empty.value);
+        if (farm.checked) categoriesArray.push(farm.value);
+        if (other.checked) categoriesArray.push(other.value);
+
+        // If there is at least one category checked,
+        // create where method and push it to the where methods array
+        if (categoriesArray.length > 0) {
+            whereMethods.push(where("category", "in", categoriesArray))
+        }
+    }
+
+    // If a maximum price is set by the user,
+    // push the according where method to the where methods array
+    if (price.value != "") {
+        whereMethods.push(where("price", "<=", parseInt(price.value)));
+    }
+
+    // Create query for properties and spread where methods as arguments
+    const q = query(propertiesRef, ...whereMethods);
+    // Query documents from database based on the query q
+    const querySnapshot = await getDocs(q);
+    // Log all properties to console
+    querySnapshot.forEach((doc) => {
+        console.log(doc.data());
+    });
+
+    // TODO:
+    // Filter results based on rooms and size
+    // Implement location suggestions while typing in search field
+    // Filter results based on location
+    // Show results on map
+
 }
 
 /*
