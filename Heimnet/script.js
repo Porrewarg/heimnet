@@ -88,13 +88,22 @@ async function searchProperties(event) {
     const q = query(propertiesRef, ...whereMethods);
     // Query documents from database based on the query q
     const querySnapshot = await getDocs(q);
-    // Log all properties to console
+    // Create array to store properties
+    const properties = [];
+    // Save all properties to array
     querySnapshot.forEach((doc) => {
-        console.log(doc.data());
+        properties.push(doc.data());
     });
+    // Filter properties based on rooms
+    const propertiesFilteredByRooms = properties.filter(property => property.rooms >= parseFloat(rooms.value || 0));
+    // Filter properties based on size
+    const propertiesFilteredBySize = propertiesFilteredByRooms.filter(property => property.size >= parseFloat(size.value || 0));
+    // Store filtered properies to sessionStorage
+    sessionStorage.setItem("properties", JSON.stringify(propertiesFilteredBySize));
+    // Redirect user to landingpage
+    window.location.href = "landingpage.html";
 
     // TODO:
-    // Filter results based on rooms and size
     // Implement location suggestions while typing in search field
     // Filter results based on location
     // Show results on map
