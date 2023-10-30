@@ -1,44 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCxXcxh8XL49pFL9e1xYUpQgR-VO5fnr2w",
-    authDomain: "heimnetbeta.firebaseapp.com",
-    projectId: "heimnetbeta",
-    storageBucket: "heimnetbeta.appspot.com",
-    messagingSenderId: "62220298179",
-    appId: "1:62220298179:web:93969d8c575ca5899c7f76",
-    measurementId: "G-3W477TFB28"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <script src="script.js"></script>
-  <title>Heimnet
-  </title>
+  <title>Heimnet</title>
 </head>
 
 <body>
   <div class="navbar">
     <div class="logo">
-      <a href="index2.html"><img src=""></a>
+      <a href="index.html"><img src="#"></a>
     </div>
     <ul>
       <li><a href="#">Hjem</a></li>
@@ -59,7 +33,7 @@
         <!-- Additional filter buttons -->
         <div class="additional-filter">
           <fieldset id="checkboxgroup-item_types" class="hcl-fieldset" aria-invalid="false">
-   
+
 
             <div class="hcl-checkbox-button">
               <input name="item_types" class="hcl-checkbox__input" type="checkbox" id="checkbox-item_types-all"
@@ -69,207 +43,227 @@
 
             <div class="hcl-checkbox-button">
               <input name="item_types" class="hcl-checkbox__input" type="checkbox" id="checkbox-item_types-eneboliger"
-                data-testid="hcl-checkbox-input" aria-invalid="false" checked="" value="eneboliger">
+                data-testid="hcl-checkbox-input" aria-invalid="false" value="eneboliger">
               <label class="hcl-checkbox__label" for="checkbox-item_types-eneboliger">Eneboliger</label>
             </div>
             <div class="hcl-checkbox-button">
               <input name="item_types" class="hcl-checkbox__input" type="checkbox"
-                id="checkbox-item_types-tomannsboliger" data-testid="hcl-checkbox-input" aria-invalid="false" checked=""
+                id="checkbox-item_types-tomannsboliger" data-testid="hcl-checkbox-input" aria-invalid="false"
                 value="tomannsboliger">
               <label class="hcl-checkbox__label"
                 for="checkbox-item_types-tomannsboliger">Tomannsboliger/Rekkehus</label>
             </div>
             <div class="hcl-checkbox-button">
               <input name="item_types" class="hcl-checkbox__input" type="checkbox" id="checkbox-item_types-leiligheter"
-                data-testid="hcl-checkbox-input" aria-invalid="false" checked="" value="leiligheter">
+                data-testid="hcl-checkbox-input" aria-invalid="false" value="leiligheter">
               <label class="hcl-checkbox__label" for="checkbox-item_types-leiligheter">Leiligheter</label>
             </div>
             <div class="hcl-checkbox-button">
               <input name="item_types" class="hcl-checkbox__input" type="checkbox"
-                id="checkbox-item_types-fritidsboliger" data-testid="hcl-checkbox-input" aria-invalid="false" checked=""
+                id="checkbox-item_types-fritidsboliger" data-testid="hcl-checkbox-input" aria-invalid="false"
                 value="fritidsboliger">
               <label class="hcl-checkbox__label" for="checkbox-item_types-fritidsboliger">Fritidsboliger</label>
             </div>
 
             <div class="hcl-checkbox-button">
               <input name="item_types" class="hcl-checkbox__input" type="checkbox" id="checkbox-item_types-tomt"
-                data-testid="hcl-checkbox-input" aria-invalid="false" checked="" value="tomt">
+                data-testid="hcl-checkbox-input" aria-invalid="false" value="tomt">
               <label class="hcl-checkbox__label" for="checkbox-item_types-tomt">Tomt</label>
             </div>
             <div class="hcl-checkbox-button">
               <input name="item_types" class="hcl-checkbox__input" type="checkbox" id="checkbox-item_types-gard"
-                data-testid="hcl-checkbox-input" aria-invalid="false" checked="" value="gard">
+                data-testid="hcl-checkbox-input" aria-invalid="false" value="gard">
               <label class="hcl-checkbox__label" for="checkbox-item_types-gard">Gård/Småbruk/Skog</label>
             </div>
             <div class="hcl-checkbox-button">
               <input name="item_types" class="hcl-checkbox__input" type="checkbox" id="checkbox-item_types-annet"
-                data-testid="hcl-checkbox-input" aria-invalid="false" checked="" value="annet">
+                data-testid="hcl-checkbox-input" aria-invalid="false" value="annet">
               <label class="hcl-checkbox__label" for="checkbox-item_types-annet">Annet</label>
             </div>
+
+          </fieldset>
         </div>
-<div id="specified-filter">
-        <div class="hcl-grid__item hcl-grid__item-span-3 hcl-grid__item-lg-span-1">
-          <label for="select-rooms_min" class="hcl-form-label">
-            <span class="hcl-form-label__text">Minmum antall rom</span>
-            <span class="curtain-selector">
-              <select id="select-rooms_min" class="hcl-select__list" name="rooms_min" aria-invalid="false">
-                <option value="">Alla</option>
-                <option value="1">1 rum</option>
-                <option value="1.5">1,5 rum</option>
-                <option value="2">2 rum</option>
-                <option value="2.5">2,5 rum</option>
-                <option value="3">3 rum</option>
-                <option value="3.5">3,5 rum</option>
-                <option value="4">4 rum</option>
-                <option value="5">5 rum</option>
-                <option value="6">6 rum</option>
-                <option value="7">7 rum</option>
-                <option value="8">8 rum</option>
-                <option value="10">10 rum</option>
-                <option value="15">15 rum</option>
-              </select>
-              <span class="hcl-select__icon">
+        <div id="specified-filter">
+          <div class="hcl-grid__item hcl-grid__item-span-3 hcl-grid__item-lg-span-1">
+            <label for="select-rooms_min" class="hcl-form-label">
+              <span class="hcl-form-label__text">Minmum antall rom</span>
+              <span class="curtain-selector">
+                <select id="select-rooms_min" class="hcl-select__list" name="rooms_min" aria-invalid="false">
+                  <option value="">Alla</option>
+                  <option value="1">1 rum</option>
+                  <option value="1.5">1,5 rum</option>
+                  <option value="2">2 rum</option>
+                  <option value="2.5">2,5 rum</option>
+                  <option value="3">3 rum</option>
+                  <option value="3.5">3,5 rum</option>
+                  <option value="4">4 rum</option>
+                  <option value="5">5 rum</option>
+                  <option value="6">6 rum</option>
+                  <option value="7">7 rum</option>
+                  <option value="8">8 rum</option>
+                  <option value="10">10 rum</option>
+                  <option value="15">15 rum</option>
+                </select>
+                <span class="hcl-select__icon">
+                  <span class="hcl-icon">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down"
+                      class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512">
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </label>
+            <span role="alert" class="hcl-hint hcl-hint--error hcl-hint--hidden" id="select-rooms_min-error" hidden="">
+              <span class="hcl-hint__icon" data-testid="hint-icon">
                 <span class="hcl-icon">
-                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="exclamation-triangle"
+                    class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512">
                   </svg>
                 </span>
               </span>
             </span>
-          </label>
-          <span role="alert" class="hcl-hint hcl-hint--error hcl-hint--hidden" id="select-rooms_min-error" hidden="">
-            <span class="hcl-hint__icon" data-testid="hint-icon">
-              <span class="hcl-icon">
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="exclamation-triangle" class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                </svg>
+            <span class="hcl-hint hcl-hint--hidden" id="select-rooms_min-hint" hidden=""></span>
+          </div>
+          <div class="hcl-grid__item hcl-grid__item-span-3 hcl-grid__item-lg-span-1">
+            <label for="select-living_area_min" class="hcl-form-label">
+              <span class="hcl-form-label__text">Minimum størrelse</span>
+              <span class="curtain-selector">
+                <select id="select-living_area_min" class="hcl-select__list" name="living_area_min"
+                  aria-invalid="false">
+                  <option value="">Alla</option>
+                  <option value="20">20&nbsp;m²</option>
+                  <option value="25">25&nbsp;m²</option>
+                  <option value="30">30&nbsp;m²</option>
+                  <option value="35">35&nbsp;m²</option>
+                  <option value="40">40&nbsp;m²</option>
+                  <option value="45">45&nbsp;m²</option>
+                  <option value="50">50&nbsp;m²</option>
+                  <option value="55">55&nbsp;m²</option>
+                  <option value="60">60&nbsp;m²</option>
+                  <option value="65">65&nbsp;m²</option>
+                  <option value="70">70&nbsp;m²</option>
+                  <option value="75">75&nbsp;m²</option>
+                  <option value="80">80&nbsp;m²</option>
+                  <option value="85">85&nbsp;m²</option>
+                  <option value="90">90&nbsp;m²</option>
+                  <option value="95">95&nbsp;m²</option>
+                  <option value="100">100&nbsp;m²</option>
+                  <option value="105">105&nbsp;m²</option>
+                  <option value="110">110&nbsp;m²</option>
+                  <option value="115">115&nbsp;m²</option>
+                  <option value="120">120&nbsp;m²</option>
+                  <option value="125">125&nbsp;m²</option>
+                  <option value="130">130&nbsp;m²</option>
+                  <option value="135">135&nbsp;m²</option>
+                  <option value="140">140&nbsp;m²</option>
+                  <option value="145">145&nbsp;m²</option>
+                  <option value="150">150&nbsp;m²</option>
+                  <option value="155">155&nbsp;m²</option>
+                  <option value="160">160&nbsp;m²</option>
+                  <option value="170">170&nbsp;m²</option>
+                  <option value="180">180&nbsp;m²</option>
+                  <option value="200">200&nbsp;m²</option>
+                  <option value="250">250&nbsp;m²</option>
+                </select>
+                <span class="hcl-select__icon">
+                  <span class="hcl-icon">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down"
+                      class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512">
+                      <!-- Path element omitted for brevity -->
+                    </svg>
+                  </span>
+                </span>
               </span>
-            </span>
-          </span>
-          <span class="hcl-hint hcl-hint--hidden" id="select-rooms_min-hint" hidden=""></span>
-        </div>
-        <div class="hcl-grid__item hcl-grid__item-span-3 hcl-grid__item-lg-span-1">
-          <label for="select-living_area_min" class="hcl-form-label">
-            <span class="hcl-form-label__text">Minimum størrelse</span>
-            <span class="curtain-selector">
-              <select id="select-living_area_min" class="hcl-select__list" name="living_area_min" aria-invalid="false">
-                <option value="">Alla</option>
-                <option value="20">20&nbsp;m²</option>
-                <option value="25">25&nbsp;m²</option>
-                <option value="30">30&nbsp;m²</option>
-                <option value="35">35&nbsp;m²</option>
-                <option value="40">40&nbsp;m²</option>
-                <option value="45">45&nbsp;m²</option>
-                <option value="50">50&nbsp;m²</option>
-                <option value="55">55&nbsp;m²</option>
-                <option value="60">60&nbsp;m²</option>
-                <option value="65">65&nbsp;m²</option>
-                <option value="70">70&nbsp;m²</option>
-                <option value="75">75&nbsp;m²</option>
-                <option value="80">80&nbsp;m²</option>
-                <option value="85">85&nbsp;m²</option>
-                <option value="90">90&nbsp;m²</option>
-                <option value="95">95&nbsp;m²</option>
-                <option value="100">100&nbsp;m²</option>
-                <option value="105">105&nbsp;m²</option>
-                <option value="110">110&nbsp;m²</option>
-                <option value="115">115&nbsp;m²</option>
-                <option value="120">120&nbsp;m²</option>
-                <option value="125">125&nbsp;m²</option>
-                <option value="130">130&nbsp;m²</option>
-                <option value="135">135&nbsp;m²</option>
-                <option value="140">140&nbsp;m²</option>
-                <option value="145">145&nbsp;m²</option>
-                <option value="150">150&nbsp;m²</option>
-                <option value="155">155&nbsp;m²</option>
-                <option value="160">160&nbsp;m²</option>
-                <option value="170">170&nbsp;m²</option>
-                <option value="180">180&nbsp;m²</option>
-                <option value="200">200&nbsp;m²</option>
-                <option value="250">250&nbsp;m²</option>
-              </select>
-              <span class="hcl-select__icon">
+            </label>
+            <span role="alert" class="hcl-hint hcl-hint--error hcl-hint--hidden" id="select-living_area_min-error"
+              hidden="">
+              <span class="hcl-hint__icon" data-testid="hint-icon">
                 <span class="hcl-icon">
-                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="exclamation-triangle"
+                    class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512">
                     <!-- Path element omitted for brevity -->
                   </svg>
                 </span>
               </span>
             </span>
-          </label>
-          <span role="alert" class="hcl-hint hcl-hint--error hcl-hint--hidden" id="select-living_area_min-error" hidden="">
-            <span class="hcl-hint__icon" data-testid="hint-icon">
-              <span class="hcl-icon">
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="exclamation-triangle" class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                  <!-- Path element omitted for brevity -->
-                </svg>
-              </span>
-            </span>
-          </span>
-          <span class="hcl-hint hcl-hint--hidden" id="select-living_area_min-hint" hidden=""></span>
-        </div>
+            <span class="hcl-hint hcl-hint--hidden" id="select-living_area_min-hint" hidden=""></span>
+          </div>
 
-        <div class="hcl-grid__item hcl-grid__item-span-3 hcl-grid__item-lg-span-1">
-          <label for="select-price_max" class="hcl-form-label">
-            <span class="hcl-form-label__text">Max Pris</span>
-            <span class="curtain-selector">
-              <select id="select-price_max" class="hcl-select__list" name="price_max" aria-invalid="false">
-                <option value="">Inget</option>
-                <option value="100000">100&nbsp;000&nbsp;kr</option>
-                <option value="200000">200&nbsp;000&nbsp;kr</option>
-                <option value="300000">300&nbsp;000&nbsp;kr</option>
-                <option value="400000">400&nbsp;000&nbsp;kr</option>
-                <option value="500000">500&nbsp;000&nbsp;kr</option>
-                <option value="750000">750&nbsp;000&nbsp;kr</option>
-                <option value="1000000">1&nbsp;000&nbsp;000&nbsp;kr</option>
-                <option value="1250000">1,25&nbsp;milj.&nbsp;kr</option>
-                <option value="1500000">1,5&nbsp;milj.&nbsp;kr</option>
-                <option value="1750000">1,75&nbsp;milj.&nbsp;kr</option>
-                <option value="2000000">2&nbsp;milj.&nbsp;kr</option>
-                <option value="2250000">2,25&nbsp;milj.&nbsp;kr</option>
-                <option value="2500000">2,5&nbsp;milj.&nbsp;kr</option>
-                <option value="3000000">3&nbsp;milj.&nbsp;kr</option>
-                <option value="3500000">3,5&nbsp;milj.&nbsp;kr</option>
-                <option value="4000000">4&nbsp;milj.&nbsp;kr</option>
-                <option value="4500000">4,5&nbsp;milj.&nbsp;kr</option>
-                <option value="5000000">5&nbsp;milj.&nbsp;kr</option>
-                <option value="5500000">5,5&nbsp;milj.&nbsp;kr</option>
-                <option value="6000000">6&nbsp;milj.&nbsp;kr</option>
-                <option value="7000000">7&nbsp;milj.&nbsp;kr</option>
-                <option value="8000000">8&nbsp;milj.&nbsp;kr</option>
-                <option value="9000000">9&nbsp;milj.&nbsp;kr</option>
-                <option value="10000000">10&nbsp;milj.&nbsp;kr</option>
-                <option value="11000000">11&nbsp;milj.&nbsp;kr</option>
-                <option value="12000000">12&nbsp;milj.&nbsp;kr</option>
-                <option value="13000000">13&nbsp;milj.&nbsp;kr</option>
-                <option value="15000000">15&nbsp;milj.&nbsp;kr</option>
-                <option value="20000000">20&nbsp;milj.&nbsp;kr</option>
-              </select>
-              <span class="hcl-select__icon">
+          <div class="hcl-grid__item hcl-grid__item-span-3 hcl-grid__item-lg-span-1">
+            <label for="select-price_max" class="hcl-form-label">
+              <span class="hcl-form-label__text">Max Pris</span>
+              <span class="curtain-selector">
+                <select id="select-price_max" class="hcl-select__list" name="price_max" aria-invalid="false">
+                  <option value="">Inget</option>
+                  <option value="100000">100&nbsp;000&nbsp;kr</option>
+                  <option value="200000">200&nbsp;000&nbsp;kr</option>
+                  <option value="300000">300&nbsp;000&nbsp;kr</option>
+                  <option value="400000">400&nbsp;000&nbsp;kr</option>
+                  <option value="500000">500&nbsp;000&nbsp;kr</option>
+                  <option value="750000">750&nbsp;000&nbsp;kr</option>
+                  <option value="1000000">1&nbsp;000&nbsp;000&nbsp;kr</option>
+                  <option value="1250000">1,25&nbsp;milj.&nbsp;kr</option>
+                  <option value="1500000">1,5&nbsp;milj.&nbsp;kr</option>
+                  <option value="1750000">1,75&nbsp;milj.&nbsp;kr</option>
+                  <option value="2000000">2&nbsp;milj.&nbsp;kr</option>
+                  <option value="2250000">2,25&nbsp;milj.&nbsp;kr</option>
+                  <option value="2500000">2,5&nbsp;milj.&nbsp;kr</option>
+                  <option value="3000000">3&nbsp;milj.&nbsp;kr</option>
+                  <option value="3500000">3,5&nbsp;milj.&nbsp;kr</option>
+                  <option value="4000000">4&nbsp;milj.&nbsp;kr</option>
+                  <option value="4500000">4,5&nbsp;milj.&nbsp;kr</option>
+                  <option value="5000000">5&nbsp;milj.&nbsp;kr</option>
+                  <option value="5500000">5,5&nbsp;milj.&nbsp;kr</option>
+                  <option value="6000000">6&nbsp;milj.&nbsp;kr</option>
+                  <option value="7000000">7&nbsp;milj.&nbsp;kr</option>
+                  <option value="8000000">8&nbsp;milj.&nbsp;kr</option>
+                  <option value="9000000">9&nbsp;milj.&nbsp;kr</option>
+                  <option value="10000000">10&nbsp;milj.&nbsp;kr</option>
+                  <option value="11000000">11&nbsp;milj.&nbsp;kr</option>
+                  <option value="12000000">12&nbsp;milj.&nbsp;kr</option>
+                  <option value="13000000">13&nbsp;milj.&nbsp;kr</option>
+                  <option value="15000000">15&nbsp;milj.&nbsp;kr</option>
+                  <option value="20000000">20&nbsp;milj.&nbsp;kr</option>
+                </select>
+                <span class="hcl-select__icon">
+                  <span class="hcl-icon">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down"
+                      class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512">
+                      <path fill="currentColor"
+                        d="M207.029 381.476 12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z">
+                      </path>
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </label>
+            <span role="alert" class="hcl-hint hcl-hint--error hcl-hint--hidden" id="select-price_max-error" hidden="">
+              <span class="hcl-hint__icon" data-testid="hint-icon">
                 <span class="hcl-icon">
-                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path fill="currentColor" d="M207.029 381.476 12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="exclamation-triangle"
+                    class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512">
+                    <path fill="currentColor"
+                      d="m248.747 204.705 6.588 112c.373 6.343 5.626 11.295 11.979 11.295h41.37a12 12 0 0 0 11.979-11.295l6.588-112c.405-6.893-5.075-12.705-11.979-12.705h-54.547c-6.903 0-12.383 5.812-11.978 12.705zM330 384c0 23.196-18.804 42-42 42s-42-18.804-42-42 18.804-42 42-42 42 18.804 42 42zm-.423-360.015c-18.433-31.951-64.687-32.009-83.154 0L6.477 440.013C-11.945 471.946 11.118 512 48.054 512H527.94c36.865 0 60.035-39.993 41.577-71.987L329.577 23.985zM53.191 455.002 282.803 57.008c2.309-4.002 8.085-4.002 10.394 0l229.612 397.993c2.308 4-.579 8.998-5.197 8.998H58.388c-4.617.001-7.504-4.997-5.197-8.997z">
+                    </path>
                   </svg>
                 </span>
               </span>
             </span>
-          </label>
-          <span role="alert" class="hcl-hint hcl-hint--error hcl-hint--hidden" id="select-price_max-error" hidden="">
-            <span class="hcl-hint__icon" data-testid="hint-icon">
-              <span class="hcl-icon">
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="exclamation-triangle" class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                  <path fill="currentColor" d="m248.747 204.705 6.588 112c.373 6.343 5.626 11.295 11.979 11.295h41.37a12 12 0 0 0 11.979-11.295l6.588-112c.405-6.893-5.075-12.705-11.979-12.705h-54.547c-6.903 0-12.383 5.812-11.978 12.705zM330 384c0 23.196-18.804 42-42 42s-42-18.804-42-42 18.804-42 42-42 42 18.804 42 42zm-.423-360.015c-18.433-31.951-64.687-32.009-83.154 0L6.477 440.013C-11.945 471.946 11.118 512 48.054 512H527.94c36.865 0 60.035-39.993 41.577-71.987L329.577 23.985zM53.191 455.002 282.803 57.008c2.309-4.002 8.085-4.002 10.394 0l229.612 397.993c2.308 4-.579 8.998-5.197 8.998H58.388c-4.617.001-7.504-4.997-5.197-8.997z"></path>
-                </svg>
-              </span>
-            </span>
-          </span>
-          <span class="hcl-hint hcl-hint--hidden" id="select-price_max-hint" hidden=""></span>
+            <span class="hcl-hint hcl-hint--hidden" id="select-price_max-hint" hidden=""></span>
+          </div>
+
+
         </div>
-        
-        
-      </div>
 
 
         <div id="container-buttons">
-          <input type="submit" class="find-button" value="Finn boliger" onclick="addMoreItems()" />
+          <input type="submit" class="find-button" value="Finn boliger" id="search-button" />
           <input type="button" name="next" class="find-button" value="Se boligens salgspris" />
         </div>
       </fieldset>
@@ -279,7 +273,7 @@
 
   <section id="guide-section">
     <div class="info-section">
-
+    </div>
 
   </section>
 
@@ -290,7 +284,7 @@
     </div>
     <div class="social-media-info">
       <h2>Følg oss</h2>
-      
+
     </div>
 
 
@@ -299,6 +293,7 @@
   <footer id="footer">
     <h1>This is a footer</h1>
   </footer>
+  <script src="script.js" type="module"></script>
 </body>
 
 </html>
