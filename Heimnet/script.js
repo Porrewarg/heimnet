@@ -21,16 +21,37 @@ const db = getFirestore(app);
 // Create a reference to the properties collection
 const propertiesRef = collection(db, "properties");
 
-// Get all properties from firebase and log them to the console
-/*
-const querySnapshot = await getDocs(propertiesRef);
-querySnapshot.forEach((doc) => {
-    console.log(doc.data());
+// Get all properties from firebase and store the cities in a variable
+const allPropertiesSnapshot = await getDocs(propertiesRef);
+const allProperties = [];
+allPropertiesSnapshot.forEach(doc => {
+    allProperties.push(doc.data());
 });
-*/
+const cities = [];
+allProperties.forEach(property => {
+    if (!cities.includes(property.city)) {
+        cities.push(property.city);
+    }
+});
 
 // Add event listener to search button
 document.getElementById("search-button").addEventListener("click", searchProperties);
+
+// Add event listener to search bar to display suggestions
+const input = document.getElementById("autocomplete-input");
+input.addEventListener("input", suggestCities);
+
+// Show suggestions
+async function suggestCities() {
+    // Store input in query variable
+    const query = input.value;
+
+    // Get all matching cities from the city array
+    const filteredCities = cities.filter(city => city.includes(query));
+
+    // TODO Show search results as suggestions
+
+}
 
 // Query filtered properties from the firestore database
 async function searchProperties(event) {
