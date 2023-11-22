@@ -80,6 +80,10 @@ ul {
   
 }
 
+#search-bar {
+  position: relative;
+}
+
 #search-bar input {
   padding: 15px;
   border: 1px solid #ccc;
@@ -90,6 +94,33 @@ ul {
   font-family: montserrat;
   color: #2C3E50;
   font-size: 13px;
+}
+
+#search-suggestions {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  font-size: 13px;
+  position: absolute;
+  z-index: 5;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#search-suggestions li {
+  width: 100%;
+  text-align: left;
+  padding: 3px;
+}
+
+#search-suggestions li:hover {
+  cursor: pointer;
+  background-color: #ddd;
 }
 
 /* Style for the container of the checkbox and label */

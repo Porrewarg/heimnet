@@ -21,13 +21,16 @@ const db = getFirestore(app);
 // Create a reference to the properties collection
 const propertiesRef = collection(db, "properties");
 
-// Get all properties from firebase and store the cities in a variable
+// Get all properties from firebase to store the cities in a variable
 const allPropertiesSnapshot = await getDocs(propertiesRef);
+// Create needed variables
 const allProperties = [];
+const cities = [];
+// Push all properties to variable
 allPropertiesSnapshot.forEach(doc => {
     allProperties.push(doc.data());
 });
-const cities = [];
+// Push all cities to variable (each city only once)
 allProperties.forEach(property => {
     if (!cities.includes(property.city)) {
         cities.push(property.city);
@@ -41,16 +44,35 @@ document.getElementById("search-button").addEventListener("click", searchPropert
 const input = document.getElementById("autocomplete-input");
 input.addEventListener("input", suggestCities);
 
+// Suggestion field
+const suggestions = document.getElementById("search-suggestions");
+
+// Hide suggestions on focusout of input
+window.addEventListener("click", (e) => {
+    if (e.target !== input && e.target !== suggestions) {
+        suggestions.style.visibility = "hidden";
+    }
+});
+
 // Show suggestions
 async function suggestCities() {
     // Store input in query variable
     const query = input.value;
-
     // Get all matching cities from the city array
-    const filteredCities = cities.filter(city => city.includes(query));
-
-    // TODO Show search results as suggestions
-
+    const filteredCities = cities.filter(city => city.toLowerCase().includes(query.toLowerCase()));
+    // Clear suggestions field and make it visible
+    suggestions.innerHTML = "";
+    suggestions.style.visibility = "visible";
+    // Append suggestions
+    filteredCities.forEach(city => {
+        const suggestion = document.createElement("li");
+        suggestion.innerText = city;
+        suggestion.addEventListener("click", () => {
+            input.value = city;
+            suggestions.style.visibility = "hidden";
+        });
+        suggestions.appendChild(suggestion);
+    });
 }
 
 // Query filtered properties from the firestore database
