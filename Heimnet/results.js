@@ -1,22 +1,38 @@
-// // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyD1v8Q19i9WV2UZLlQPLWHxOrWGfKF8tB4",
-    authDomain: "heimnet-95306.firebaseapp.com",
-    databaseURL: "https://heimnet-95306-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "heimnet-95306",
-    storageBucket: "heimnet-95306.appspot.com",
-    messagingSenderId: "919356303287",
-    appId: "1:919356303287:web:83e57a5adebbed90852a32",
-    measurementId: "G-8YWJ0BE4WB"
-};
-
-// // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// Create a reference to the properties collection
-const propertiesRef = collection(db, "properties");
+// Select title
+const title = document.getElementById("title");
+// If query from index.html exists then add it to the title
+if (sessionStorage.getItem("query")) {
+    title.innerText = "Boliger til salgs - " + sessionStorage.getItem("query");
+}
+// If properties in sessionStorage
+if (sessionStorage.getItem("properties")) {
+    // Get properties
+    const properties = JSON.parse(sessionStorage.getItem("properties"));
+    // Select outer container/div
+    const container = document.getElementById("search-result-map-container");
+    // Display properties on page
+    properties.forEach(property => {
+        // Create container
+        const propertyContainer = document.createElement("div");
+        // Create image
+        const image = document.createElement("img");
+        image.src = property.pictures[0];
+        // Create title
+        const name = document.createElement("h2");
+        name.innerText = property.name;
+        // Create details
+        const details = document.createElement("p");
+        details.innerText =
+            `${property.address}
+            ${property.city}
+            ${property.price} kr
+            ${property.size} m²
+            ${property.rooms} rum
+            ${parseInt(property.price / property.size)} kr/m²`
+        // Put everything together
+        propertyContainer.appendChild(image);
+        propertyContainer.appendChild(name);
+        propertyContainer.appendChild(details);
+        container.appendChild(propertyContainer);
+    });
+}

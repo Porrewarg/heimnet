@@ -141,8 +141,12 @@ async function searchProperties(event) {
     const propertiesFilteredByRooms = properties.filter(property => property.rooms >= parseFloat(rooms.value || 0));
     // Filter properties based on size
     const propertiesFilteredBySize = propertiesFilteredByRooms.filter(property => property.size >= parseFloat(size.value || 0));
+    // Flilter properties based on search term
+    const propertiesFilteredByQuery = propertiesFilteredByRooms.filter(property => property.city.toLowerCase().includes(input.value.toLowerCase()));
     // Store filtered properies to sessionStorage
-    sessionStorage.setItem("properties", JSON.stringify(propertiesFilteredBySize));
+    sessionStorage.setItem("properties", JSON.stringify(propertiesFilteredByQuery));
+    // Store query to sessionStorage
+    sessionStorage.setItem("query", input.value);
     // Redirect user to landingpage
     window.location.href = "landingpage.html";
 
